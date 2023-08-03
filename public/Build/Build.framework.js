@@ -1975,13 +1975,13 @@ var tempI64;
 // === Body ===
 
 var ASM_CONSTS = {
-  3209228: function() {Module['emscripten_get_now_backup'] = performance.now;},  
- 3209283: function($0) {performance.now = function() { return $0; };},  
- 3209331: function($0) {performance.now = function() { return $0; };},  
- 3209379: function() {performance.now = Module['emscripten_get_now_backup'];},  
- 3209434: function() {return Module.webglContextAttributes.premultipliedAlpha;},  
- 3209495: function() {return Module.webglContextAttributes.preserveDrawingBuffer;},  
- 3209559: function() {return Module.webglContextAttributes.powerPreference;}
+  3209404: function() {Module['emscripten_get_now_backup'] = performance.now;},  
+ 3209459: function($0) {performance.now = function() { return $0; };},  
+ 3209507: function($0) {performance.now = function() { return $0; };},  
+ 3209555: function() {performance.now = Module['emscripten_get_now_backup'];},  
+ 3209610: function() {return Module.webglContextAttributes.premultipliedAlpha;},  
+ 3209671: function() {return Module.webglContextAttributes.preserveDrawingBuffer;},  
+ 3209735: function() {return Module.webglContextAttributes.powerPreference;}
 };
 
 
@@ -4380,6 +4380,14 @@ var ASM_CONSTS = {
   function _JS_UnityEngineShouldQuit() {
   	return !!Module.shouldQuit;
   }
+
+  function _UnityToFrontend(functionName) {
+      try {
+        window.dispatchReactUnityEvent("UnityToFrontend", Pointer_stringify(functionName));
+      } catch (e) {
+        console.warn("Failed to dispatch event");
+      }
+    }
 
   function ___assert_fail(condition, filename, line, func) {
       abort('Assertion failed: ' + UTF8ToString(condition) + ', at: ' + [filename ? UTF8ToString(filename) : 'unknown filename', line, func ? UTF8ToString(func) : 'unknown function']);
@@ -14938,6 +14946,7 @@ var asmLibraryArg = {
   "JS_SystemInfo_HasFullscreen": _JS_SystemInfo_HasFullscreen,
   "JS_SystemInfo_HasWebGL": _JS_SystemInfo_HasWebGL,
   "JS_UnityEngineShouldQuit": _JS_UnityEngineShouldQuit,
+  "UnityToFrontend": _UnityToFrontend,
   "__assert_fail": ___assert_fail,
   "__cxa_allocate_exception": ___cxa_allocate_exception,
   "__cxa_begin_catch": ___cxa_begin_catch,
