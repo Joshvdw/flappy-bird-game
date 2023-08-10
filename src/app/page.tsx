@@ -6,6 +6,8 @@ import { Unity, useUnityContext } from "react-unity-webgl";
 import LandingPage from "@/Components/LandingPage";
 import HighScore from "@/Components/HighScore";
 import GameOver from "@/Components/GameOver";
+// import "../../public/fonts/augustus.ttf";
+// import "../../public/fonts/oasis.ttf";
 
 export default function Home() {
   const [sceneState, setSceneState] = useState("landing");

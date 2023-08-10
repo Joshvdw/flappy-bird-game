@@ -6,8 +6,8 @@ const LandingPage = (props: any) => {
     props.setSceneState("game");
   }
   return (
-    <div className="fullpage__wrapper">
-      <h1>Flappy Frog</h1>
+    <div className="fullpage__wrapper landing background">
+      <h1>Strings of Elysium</h1>
       <button onClick={startGame}>Play</button>
     </div>
   );
