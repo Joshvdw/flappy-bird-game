@@ -12,13 +12,18 @@ import GameOver from "@/Components/GameOver";
 export default function Home() {
   const [sceneState, setSceneState] = useState("landing");
 
-  const { unityProvider, sendMessage, addEventListener, removeEventListener } =
-    useUnityContext({
-      loaderUrl: "/Build/Build.loader.js",
-      dataUrl: "/Build/Build.data",
-      frameworkUrl: "/Build/Build.framework.js",
-      codeUrl: "/Build/Build.wasm",
-    });
+  const {
+    unityProvider,
+    sendMessage,
+    addEventListener,
+    removeEventListener,
+    initialisationError,
+  } = useUnityContext({
+    loaderUrl: "/Build/Build.loader.js",
+    dataUrl: "/Build/Build.data.gz",
+    frameworkUrl: "/Build/Build.framework.js.gz",
+    codeUrl: "/Build/Build.wasm.gz",
+  });
 
   function msgUnity(functionName: string) {
     console.log(`msg sent to unity: '${functionName}'`);
@@ -54,6 +59,10 @@ export default function Home() {
   //     }
   //   }
   // }, []);
+
+  useEffect(() => {
+    if (initialisationError) console.log(initialisationError);
+  }, [initialisationError]);
 
   return (
     <>
