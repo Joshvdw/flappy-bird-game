@@ -11,6 +11,7 @@ import GameOver from "@/Components/GameOver";
 
 export default function Home() {
   const [sceneState, setSceneState] = useState("landing");
+  const [showLanding, setShowLanding] = useState(false);
 
   const {
     unityProvider,
@@ -64,14 +65,24 @@ export default function Home() {
     if (initialisationError) console.log(initialisationError);
   }, [initialisationError]);
 
+  useEffect(() => {
+    setTimeout(() => {
+      setShowLanding(true);
+    }, 2000);
+  }, []);
+
   return (
     <>
-      {sceneState == "landing" && (
-        <LandingPage msgUnity={msgUnity} setSceneState={setSceneState} />
-      )}
-      {/* {sceneState == "game" || ("gameOver" && <HighScore />)} */}
-      {sceneState == "gameOver" && (
-        <GameOver msgUnity={msgUnity} setSceneState={setSceneState} />
+      {showLanding && (
+        <>
+          {sceneState == "landing" && (
+            <LandingPage msgUnity={msgUnity} setSceneState={setSceneState} />
+          )}
+          {/* {sceneState == "game" || ("gameOver" && <HighScore />)} */}
+          {sceneState == "gameOver" && (
+            <GameOver msgUnity={msgUnity} setSceneState={setSceneState} />
+          )}
+        </>
       )}
       <Unity
         unityProvider={unityProvider}
