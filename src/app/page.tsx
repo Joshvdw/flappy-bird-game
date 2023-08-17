@@ -19,6 +19,8 @@ export default function Home() {
     addEventListener,
     removeEventListener,
     initialisationError,
+    isLoaded,
+    loadingProgression,
   } = useUnityContext({
     loaderUrl: "/Build/Build.loader.js",
     dataUrl: "/Build/Build.data.gz",
@@ -66,6 +68,8 @@ export default function Home() {
   }, [initialisationError]);
 
   useEffect(() => {
+    console.log("isLoaded: ", isLoaded);
+    console.log("loadingProgression: ", loadingProgression);
     setTimeout(() => {
       setShowLanding(true);
     }, 2000);
@@ -73,7 +77,7 @@ export default function Home() {
 
   return (
     <>
-      {showLanding && (
+      {isLoaded && (
         <>
           {sceneState == "landing" && (
             <LandingPage msgUnity={msgUnity} setSceneState={setSceneState} />
