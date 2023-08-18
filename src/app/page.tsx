@@ -88,6 +88,13 @@ export default function Home() {
           )}
         </>
       )}
+      {!isLoaded && (
+        <div className="fullpage__wrapper">
+          <p style={{ color: "black" }}>loading</p>
+          <br />
+          <p>{loadingProgression}</p>
+        </div>
+      )}
       <Unity
         unityProvider={unityProvider}
         className={styles.unity_canvas}

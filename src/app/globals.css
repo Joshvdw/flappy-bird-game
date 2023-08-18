@@ -33,8 +33,6 @@ a {
       rgba(16, 16, 18, 0) 60%
     ),
     url("../../public/images/landing.png");
-  /* background: linear-gradient(90deg, rgba(16, 16, 18, 0.8) 0%, rgba(16, 16, 18, 0) 100%); */
-  /* back-fit: cover; */
   background-size: cover;
   background-position: center center;
 }
@@ -56,6 +54,9 @@ h2 {
 }
 
 h1 {
+  /* text-align: center; */
+  /* font-size: 7rem; */
+
   text-align: left;
   width: 43.5rem;
   margin-bottom: 30px;
