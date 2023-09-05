@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSpring, config, animated } from "react-spring";
 
 const LandingPage = (props: any) => {
@@ -18,8 +18,20 @@ const LandingPage = (props: any) => {
       transform: hover ? "scale(1.05)" : "scale(1)",
     },
   });
+
+  const [fadeIn, setFade] = useSpring(() => ({
+    opacity: 0,
+  }));
+
+  useEffect(() => {
+    setFade({ opacity: 1, config: config.molasses });
+  }, [fadeIn]);
+
   return (
-    <div className="fullpage__wrapper landing background">
+    <animated.div
+      style={fadeIn}
+      className="fullpage__wrapper landing background"
+    >
       <h1>Strings of Elysium</h1>
       <animated.button
         onClick={startGame}
@@ -29,7 +41,7 @@ const LandingPage = (props: any) => {
       >
         Play
       </animated.button>
-    </div>
+    </animated.div>
   );
 };
 

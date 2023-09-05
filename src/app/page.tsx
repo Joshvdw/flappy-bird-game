@@ -4,10 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import styles from "./page.module.css";
 import { Unity, useUnityContext } from "react-unity-webgl";
 import LandingPage from "@/Components/LandingPage";
-import HighScore from "@/Components/HighScore";
 import GameOver from "@/Components/GameOver";
-// import "../../public/fonts/augustus.ttf";
-// import "../../public/fonts/oasis.ttf";
 
 export default function Home() {
   const [sceneState, setSceneState] = useState("landing");
@@ -49,20 +46,6 @@ export default function Home() {
     };
   }, [addEventListener, removeEventListener, processUnityMsg]);
 
-  // const canvas = useRef<HTMLCanvasElement>(null);
-
-  // useEffect(() => {
-  //   window.addEventListener("load", resizePage, false);
-  //   window.addEventListener("resize", resizePage, false);
-
-  //   function resizePage() {
-  //     if (canvas.current) {
-  //       canvas.current.style.width = window.innerWidth + "px";
-  //       canvas.current.style.height = window.innerHeight + "px";
-  //     }
-  //   }
-  // }, []);
-
   useEffect(() => {
     if (initialisationError) console.log(initialisationError);
   }, [initialisationError]);
@@ -79,26 +62,24 @@ export default function Home() {
     <>
       {isLoaded && (
         <>
-          {sceneState == "landing" && (
-            <LandingPage msgUnity={msgUnity} setSceneState={setSceneState} />
-          )}
-          {/* {sceneState == "game" || ("gameOver" && <HighScore />)} */}
-          {sceneState == "gameOver" && (
-            <GameOver msgUnity={msgUnity} setSceneState={setSceneState} />
+          {((sceneState == "landing") && (showLanding)) && (
+             <LandingPage msgUnity={msgUnity} setSceneState={setSceneState} />
           )}
         </>
       )}
-      {!isLoaded && (
+      {sceneState == "gameOver" && (
+        <GameOver msgUnity={msgUnity} setSceneState={setSceneState} />
+      )}
+      {/* {!isLoaded && (
         <div className="fullpage__wrapper">
           <p style={{ color: "black" }}>loading</p>
           <br />
           <p>{loadingProgression}</p>
         </div>
-      )}
+      )} */}
       <Unity
         unityProvider={unityProvider}
         className={styles.unity_canvas}
-        // ref={canvas}
       />
     </>
   );
