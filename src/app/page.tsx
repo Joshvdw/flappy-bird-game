@@ -62,9 +62,9 @@ export default function Home() {
     <>
       {/* {isLoaded && ( */}
       {/* <> */}
-      {/* {sceneState == "landing" && ( */}
+      {sceneState == "landing" && isLoaded && (
         <LandingPage msgUnity={msgUnity} setSceneState={setSceneState} />
-      {/* )} */}
+      )}
       {/* </> */}
       {/* )} */}
       {sceneState == "gameOver" && (
@@ -77,10 +77,9 @@ export default function Home() {
           <p>{loadingProgression}</p>
         </div>
       )} */}
-      {sceneState != "landing" && (
-        // <LandingPage msgUnity={msgUnity} setSceneState={setSceneState} />
-        <Unity unityProvider={unityProvider} className={styles.unity_canvas} />
-      )}
+      {/* {(sceneState == "game" || sceneState == "gameOver") && ( */}
+      <Unity unityProvider={unityProvider} className={styles.unity_canvas} />
+      {/* )} */}
     </>
   );
 }

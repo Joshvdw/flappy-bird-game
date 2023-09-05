@@ -38,6 +38,11 @@ body,
   background-position: center center;
 }
 
+body {
+  height: 100vh;
+  background-repeat: no-repeat;
+}
+
 .landing {
   align-items: flex-start;
   padding-left: 5vw;
@@ -92,4 +97,10 @@ button:hover {
 
 .game_over {
   z-index: 2;
+  position: relative;
+}
+
+.landing {
+  z-index: 3;
+  position: relative;
 }
