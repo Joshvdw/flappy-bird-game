@@ -104,3 +104,9 @@ button:hover {
   z-index: 3;
   position: relative;
 }
+
+.loading {
+  color: white !important;
+  position: absolute;
+  z-index: 10;
+}

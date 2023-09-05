@@ -57,12 +57,13 @@ export default function Home() {
       setShowLanding(true);
     }, 2000);
   }, []);
+  console.log(typeof loadingProgression);
 
   return (
     <>
       {/* {isLoaded && ( */}
       {/* <> */}
-      {sceneState == "landing" && isLoaded && (
+      {sceneState == "landing" && (
         <LandingPage msgUnity={msgUnity} setSceneState={setSceneState} />
       )}
       {/* </> */}
@@ -70,13 +71,13 @@ export default function Home() {
       {sceneState == "gameOver" && (
         <GameOver msgUnity={msgUnity} setSceneState={setSceneState} />
       )}
-      {/* {!isLoaded && (
-        <div className="fullpage__wrapper">
-          <p style={{ color: "black" }}>loading</p>
+      {loadingProgression != 1 && (
+        <div className="fullpage__wrapper loading">
+          <p style={{ color: "white" }}>loading</p>
           <br />
-          <p>{loadingProgression}</p>
+          <p>{Math.round(loadingProgression * 100)}%</p>
         </div>
-      )} */}
+      )}
       {/* {(sceneState == "game" || sceneState == "gameOver") && ( */}
       <Unity unityProvider={unityProvider} className={styles.unity_canvas} />
       {/* )} */}
