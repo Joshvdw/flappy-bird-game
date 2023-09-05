@@ -60,13 +60,13 @@ export default function Home() {
 
   return (
     <>
-      {isLoaded && (
-        <>
-          {((sceneState == "landing") && (showLanding)) && (
-             <LandingPage msgUnity={msgUnity} setSceneState={setSceneState} />
-          )}
-        </>
-      )}
+      {/* {isLoaded && ( */}
+      {/* <> */}
+      {/* {sceneState == "landing" && ( */}
+        <LandingPage msgUnity={msgUnity} setSceneState={setSceneState} />
+      {/* )} */}
+      {/* </> */}
+      {/* )} */}
       {sceneState == "gameOver" && (
         <GameOver msgUnity={msgUnity} setSceneState={setSceneState} />
       )}
@@ -77,10 +77,10 @@ export default function Home() {
           <p>{loadingProgression}</p>
         </div>
       )} */}
-      <Unity
-        unityProvider={unityProvider}
-        className={styles.unity_canvas}
-      />
+      {sceneState != "landing" && (
+        // <LandingPage msgUnity={msgUnity} setSceneState={setSceneState} />
+        <Unity unityProvider={unityProvider} className={styles.unity_canvas} />
+      )}
     </>
   );
 }

@@ -20,7 +20,7 @@ const GameOver = (props: any) => {
   });
 
   return (
-    <div className="fullpage__wrapper">
+    <div className="fullpage__wrapper game_over">
       <h2>Game Over</h2>
       <animated.button
         onClick={restartGame}

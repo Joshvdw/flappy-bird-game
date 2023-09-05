@@ -5,6 +5,7 @@ const LandingPage = (props: any) => {
   const [hover, setHover] = React.useState(false);
 
   function startGame() {
+    // setFade({ opacity: 0, config: config.gentle });
     props.msgUnity("StartGame");
     props.setSceneState("game");
   }
@@ -19,17 +20,17 @@ const LandingPage = (props: any) => {
     },
   });
 
-  const [fadeIn, setFade] = useSpring(() => ({
-    opacity: 0,
-  }));
+  // const [fadeIn, setFade] = useSpring(() => ({
+  //   opacity: 0,
+  // }));
 
-  useEffect(() => {
-    setFade({ opacity: 1, config: config.molasses });
-  }, [fadeIn]);
+  // useEffect(() => {
+  //   setFade({ opacity: 1, config: config.molasses });
+  // }, []);
 
   return (
     <animated.div
-      style={fadeIn}
+      // style={fadeIn}
       className="fullpage__wrapper landing background"
     >
       <h1>Strings of Elysium</h1>
