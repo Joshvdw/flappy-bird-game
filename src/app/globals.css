@@ -108,5 +108,7 @@ button:hover {
 .loading {
   color: white !important;
   position: absolute;
+  top: 0;
+  font-weight: bold;
   z-index: 10;
 }

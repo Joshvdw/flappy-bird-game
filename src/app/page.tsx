@@ -71,16 +71,16 @@ export default function Home() {
       {sceneState == "gameOver" && (
         <GameOver msgUnity={msgUnity} setSceneState={setSceneState} />
       )}
-      {loadingProgression != 1 && (
+      {loadingProgression != 1 && sceneState == "game" && (
         <div className="fullpage__wrapper loading">
           <p style={{ color: "white" }}>loading</p>
           <br />
           <p>{Math.round(loadingProgression * 100)}%</p>
         </div>
       )}
-      {/* {(sceneState == "game" || sceneState == "gameOver") && ( */}
-      <Unity unityProvider={unityProvider} className={styles.unity_canvas} />
-      {/* )} */}
+      {(sceneState == "game" || sceneState == "gameOver") && (
+        <Unity unityProvider={unityProvider} className={styles.unity_canvas} />
+      )}
     </>
   );
 }
