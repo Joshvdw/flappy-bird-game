@@ -79,9 +79,9 @@ const LandingPage = (props: any) => {
             <div className="landing_p_wrapper">
               <p>
                 Embark on an epic musical journey through the ancient Roman
-                kingdom of Elysium. You'll have to dodge towering pillars and
-                collect the musical scriptures that hold the key to unlocking
-                the kingdom's hidden melodies.
+                kingdom of Elysium. You&apos;ll have to dodge towering pillars
+                and collect the musical scriptures that hold the key to
+                unlocking the kingdom&apos;s hidden melodies.
               </p>
             </div>
             <animated.div
