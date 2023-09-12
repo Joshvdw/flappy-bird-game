@@ -22,14 +22,27 @@ const GameOver = (props: any) => {
   return (
     <div className="fullpage__wrapper game_over">
       <h2>Game Over</h2>
-      <animated.button
+      {/* <animated.button
         onClick={restartGame}
         style={growBtn}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
       >
         Play Again
-      </animated.button>
+      </animated.button> */}
+      <animated.div
+        className={!hover ? "landing_btn_white" : "landing_btn_hover red_btn"}
+        onClick={restartGame}
+        style={growBtn}
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+      >
+        <img
+          src={!hover ? "/images/btn_deco.svg" : "/images/btn_deco_white.svg"}
+          alt=""
+        />
+        <p className={!hover ? "" : "red_text"}>Restart Game</p>
+      </animated.div>
     </div>
   );
 };

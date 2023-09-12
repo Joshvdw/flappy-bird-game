@@ -51,23 +51,16 @@ export default function Home() {
   }, [initialisationError]);
 
   useEffect(() => {
-    console.log("isLoaded: ", isLoaded);
-    console.log("loadingProgression: ", loadingProgression);
     setTimeout(() => {
       setShowLanding(true);
     }, 2000);
   }, []);
-  console.log(typeof loadingProgression);
 
   return (
     <>
-      {/* {isLoaded && ( */}
-      {/* <> */}
       {sceneState == "landing" && (
         <LandingPage msgUnity={msgUnity} setSceneState={setSceneState} />
       )}
-      {/* </> */}
-      {/* )} */}
       {sceneState == "gameOver" && (
         <GameOver msgUnity={msgUnity} setSceneState={setSceneState} />
       )}
