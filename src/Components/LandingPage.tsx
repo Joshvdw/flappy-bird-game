@@ -8,11 +8,19 @@ const LandingPage = (props: any) => {
   const [hover, setHover] = React.useState(false);
   const [hover2, setHover2] = React.useState(false);
 
+  const { msgUnity, setSceneState, sceneState, loadingProgression } = props;
+
   function startGame() {
     // setFade({ opacity: 0, config: config.gentle });
-    props.msgUnity("StartGame");
-    props.setSceneState("game");
+    msgUnity("StartGame");
+    setSceneState("loading");
   }
+
+  useEffect(() => {
+    if (loadingProgression == 1) {
+      setSceneState("game");
+    }
+  }, [loadingProgression]);
 
   const growBtn = useSpring({
     config: { ...config.gentle },
@@ -102,6 +110,13 @@ const LandingPage = (props: any) => {
           </div>
         </div>
       </div>
+      {loadingProgression != 1 && sceneState == "loading" && (
+        <div className="fullpage__wrapper loading">
+          <p style={{ color: "white" }}>loading</p>
+          <br />
+          <p>{Math.round(loadingProgression * 100)}%</p>
+        </div>
+      )}
     </>
   );
 };

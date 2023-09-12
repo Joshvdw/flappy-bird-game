@@ -45,16 +45,13 @@ a {
   text-transform: uppercase;
 }
 
-/* body,
-.background {
-  background-image: linear-gradient(
-      90deg,
-      rgba(16, 16, 18, 0.8) 0%,
-      rgba(16, 16, 18, 0) 60%
-    ),
+/* body {
+  background-image: 
     url("../../public/images/landing_new.png");
   background-size: cover;
   background-position: center center;
+  background-repeat: no-repeat;
+  height: 100vh;
 } */
 
 body {
@@ -138,6 +135,7 @@ button:hover {
   font-weight: bold;
   z-index: 10;
   font-size: 150%;
+
 }
 
 /* PARALLAX BACKGROUND */
@@ -209,7 +207,7 @@ button:hover {
 .title_deco_wrapper {
   display: flex;
   justify-content: flex-end;
-  
+
 }
 
 .top,

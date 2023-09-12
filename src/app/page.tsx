@@ -58,20 +58,20 @@ export default function Home() {
 
   return (
     <>
-      {sceneState == "landing" && (
-        <LandingPage msgUnity={msgUnity} setSceneState={setSceneState} />
+      {(sceneState == "landing" || sceneState == "loading") && (
+        <LandingPage
+          msgUnity={msgUnity}
+          setSceneState={setSceneState}
+          loadingProgression={loadingProgression}
+          sceneState={sceneState}
+        />
       )}
       {sceneState == "gameOver" && (
         <GameOver msgUnity={msgUnity} setSceneState={setSceneState} />
       )}
-      {loadingProgression != 1 && sceneState == "game" && (
-        <div className="fullpage__wrapper loading">
-          <p style={{ color: "white" }}>loading</p>
-          <br />
-          <p>{Math.round(loadingProgression * 100)}%</p>
-        </div>
-      )}
-      {(sceneState == "game" || sceneState == "gameOver") && (
+      {(sceneState == "game" ||
+        sceneState == "loading" ||
+        sceneState == "gameOver") && (
         <Unity unityProvider={unityProvider} className={styles.unity_canvas} />
       )}
     </>
