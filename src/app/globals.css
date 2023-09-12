@@ -209,6 +209,7 @@ button:hover {
 .title_deco_wrapper {
   display: flex;
   justify-content: flex-end;
+  
 }
 
 .top,
