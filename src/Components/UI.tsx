@@ -74,6 +74,27 @@ const UI = (props: any) => {
         </div>
       </animated.div>
       <animated.div className="bottom" style={fadeIn}>
+        <div className="btn_wrapper">
+          <animated.div
+            // className={!hover ? "landing_btn_white" : "landing_btn_hover"}
+            className="landing_btn_white"
+            onClick={startGame}
+            style={growBtn}
+            onMouseEnter={() => setHover(true)}
+            onMouseLeave={() => setHover(false)}
+          >
+            <img
+              // src={!hover ? "/images/btn_deco.svg" : "/images/btn_deco_white.svg"}
+              src="/images/btn_deco.svg"
+              alt=""
+            />
+            <p
+            // className={!hover ? "" : "red_text"}
+            >
+              Play Game
+            </p>
+          </animated.div>
+        </div>
         <div className="landing_p_wrapper">
           <p>
             Embark on an epic musical journey through the ancient Roman kingdom
@@ -82,19 +103,6 @@ const UI = (props: any) => {
             kingdom&apos;s hidden melodies.
           </p>
         </div>
-        <animated.div
-          className={!hover ? "landing_btn_white" : "landing_btn_hover"}
-          onClick={startGame}
-          style={growBtn}
-          onMouseEnter={() => setHover(true)}
-          onMouseLeave={() => setHover(false)}
-        >
-          <img
-            src={!hover ? "/images/btn_deco.svg" : "/images/btn_deco_white.svg"}
-            alt=""
-          />
-          <p className={!hover ? "" : "red_text"}>Play Game</p>
-        </animated.div>
       </animated.div>
     </>
   );

@@ -14,11 +14,13 @@ const LandingPage = (props: any) => {
     }
   }, [loadingProgression]);
 
+  const isMobile = window.innerWidth < 768;
+
   return (
     <>
       <div className="parallax_wrapper">
-        {/* <ParallaxImage imageUrl="/images/landing_new.png" /> */}
-        <ParallaxVideo videoUrl="/videos/landing_cut.mp4" />
+        {isMobile && <ParallaxImage imageUrl="/images/landing_new.png" />}
+        {!isMobile && <ParallaxVideo videoUrl="/videos/landing_cut.mp4" />}
       </div>
 
       <div className="rect_gradient"></div>

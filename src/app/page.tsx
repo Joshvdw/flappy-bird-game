@@ -1,14 +1,34 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 import styles from "./page.module.css";
 import { Unity, useUnityContext } from "react-unity-webgl";
 import LandingPage from "@/Components/LandingPage";
 import GameOver from "@/Components/GameOver";
+import Preloader from "@/Components/Preloader";
 
 export default function Home() {
   const [sceneState, setSceneState] = useState("landing");
   const [showLanding, setShowLanding] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Listen for the window.onload event to ensure everything is loaded
+    // window.onload = () => {
+    //   console.log("Window fully loaded");
+    setIsLoading(false); // Set isLoading to false when the entire page has loaded
+    // };
+
+    // return () => {
+    //   window.onload = null; // Cleanup the event listener when the component unmounts
+    // };
+  }, []);
 
   const {
     unityProvider,
@@ -58,6 +78,7 @@ export default function Home() {
 
   return (
     <>
+      {isLoading && <Preloader />}
       {(sceneState == "landing" || sceneState == "loading") && (
         <LandingPage
           msgUnity={msgUnity}

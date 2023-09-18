@@ -31,17 +31,21 @@ const GameOver = (props: any) => {
         Play Again
       </animated.button> */}
       <animated.div
-        className={!hover ? "landing_btn_white" : "landing_btn_hover red_btn"}
+        // className={!hover ? "landing_btn_white" : "landing_btn_hover red_btn"}
+        className="landing_btn_white"
         onClick={restartGame}
         style={growBtn}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
       >
         <img
-          src={!hover ? "/images/btn_deco.svg" : "/images/btn_deco_white.svg"}
+          // src={!hover ? "/images/btn_deco.svg" : "/images/btn_deco_white.svg"}
+          src="/images/btn_deco.svg"
           alt=""
         />
-        <p className={!hover ? "" : "red_text"}>Restart Game</p>
+        <p 
+          // className={!hover ? "" : "red_text"}
+        >Restart Game</p>
       </animated.div>
     </div>
   );

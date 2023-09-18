@@ -45,6 +45,21 @@ a {
   text-transform: uppercase;
 }
 
+.preloader {
+  z-index: 1000;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-family: "mrseaves";
+  position: absolute;
+  top: 0;
+}
+
 /* body {
   background-image: 
     url("../../public/images/landing_new.png");
@@ -135,7 +150,7 @@ button:hover {
   font-weight: bold;
   z-index: 10;
   font-size: 150%;
-  pointer-events: none!important;
+  pointer-events: none !important;
 }
 
 /* PARALLAX BACKGROUND */
@@ -218,6 +233,7 @@ button:hover {
 
 .bottom {
   align-items: flex-end;
+  flex-direction: row-reverse;
 }
 
 .landing_p_wrapper {
@@ -363,8 +379,19 @@ button:hover {
 }
 
 @media screen and (max-width: 520px) {
+  .landing_wrapper {
+    height: 92vh;
+  }
   .landing_p_wrapper {
-    max-width: 40vw !important;
+    max-width: 22rem !important;
+    /* max-width: unset !important; */
+    width: 100% !important;
+    padding: 20px 10px 0 10px;
+  }
+
+  .btn_wrapper {
+    display: flex;
+    justify-content: center;
   }
 
   .landing_p_wrapper p {
@@ -415,6 +442,10 @@ button:hover {
 
   .landing_inner_wrapper {
     padding: 15px;
+  }
+
+  .bottom {
+    display: block;
   }
 }
 
