@@ -31,6 +31,7 @@ a {
   font-weight: normal;
 }
 
+@import url("https://use.typekit.net/fhj0gwj.css");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
 
 .fullpage__wrapper {
@@ -74,7 +75,7 @@ body {
 }
 
 button {
-  font-family: "augustus";
+  /* font-family: "augustus"; */
   pointer-events: auto !important;
 }
 
@@ -105,7 +106,9 @@ h2 {
 h5 {
   color: white;
   font-size: 1rem;
+  font-family: "mrs-eaves", serif;
   font-weight: 700;
+  font-style: normal;
   letter-spacing: 12.5px;
   text-transform: uppercase;
   margin-bottom: 10px;
@@ -119,7 +122,9 @@ button {
   background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
+  font-family: "mrs-eaves", serif;
   font-weight: 700;
+  font-style: normal;
   outline: none;
   border: none;
 }
@@ -380,13 +385,14 @@ button:hover {
 
 @media screen and (max-width: 520px) {
   .landing_wrapper {
-    height: 92vh;
+    height: 90vh;
   }
   .landing_p_wrapper {
-    max-width: 22rem !important;
+    max-width: 21.5rem !important;
     /* max-width: unset !important; */
     width: 100% !important;
     padding: 20px 10px 0 10px;
+    text-align: center;
   }
 
   .btn_wrapper {
@@ -396,6 +402,7 @@ button:hover {
 
   .landing_p_wrapper p {
     font-size: 10px;
+    font-weight: 400;
   }
 
   .landing_logo_wrapper img {
@@ -445,7 +452,8 @@ button:hover {
   }
 
   .bottom {
-    display: block;
+    align-items: center;
+    flex-direction: column;
   }
 }
 

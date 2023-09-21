@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  Suspense,
   useCallback,
   useEffect,
   useLayoutEffect,
@@ -78,23 +79,28 @@ export default function Home() {
 
   return (
     <>
-      {isLoading && <Preloader />}
-      {(sceneState == "landing" || sceneState == "loading") && (
-        <LandingPage
-          msgUnity={msgUnity}
-          setSceneState={setSceneState}
-          loadingProgression={loadingProgression}
-          sceneState={sceneState}
-        />
-      )}
-      {sceneState == "gameOver" && (
-        <GameOver msgUnity={msgUnity} setSceneState={setSceneState} />
-      )}
-      {(sceneState == "game" ||
-        sceneState == "loading" ||
-        sceneState == "gameOver") && (
-        <Unity unityProvider={unityProvider} className={styles.unity_canvas} />
-      )}
+      <Suspense fallback={<div>Loading...</div>}>
+        {isLoading && <Preloader />}
+        {(sceneState == "landing" || sceneState == "loading") && (
+          <LandingPage
+            msgUnity={msgUnity}
+            setSceneState={setSceneState}
+            loadingProgression={loadingProgression}
+            sceneState={sceneState}
+          />
+        )}
+        {sceneState == "gameOver" && (
+          <GameOver msgUnity={msgUnity} setSceneState={setSceneState} />
+        )}
+        {(sceneState == "game" ||
+          sceneState == "loading" ||
+          sceneState == "gameOver") && (
+          <Unity
+            unityProvider={unityProvider}
+            className={styles.unity_canvas}
+          />
+        )}
+      </Suspense>
     </>
   );
 }
