@@ -56,7 +56,7 @@ a {
   justify-content: center;
   align-items: center;
   font-size: 2rem;
-  font-family: "mrseaves";
+  font-family: "mrseaves", serif;
   position: absolute;
   top: 0;
 }
@@ -71,7 +71,7 @@ a {
 } */
 
 body {
-  font-family: "mrseaves";
+  font-family: "mrseaves", serif;
 }
 
 button {
@@ -106,7 +106,7 @@ h2 {
 h5 {
   color: white;
   font-size: 1rem;
-  font-family: "mrs-eaves", serif;
+  font-family: "mrseaves", serif;
   font-weight: 700;
   font-style: normal;
   letter-spacing: 12.5px;
@@ -122,7 +122,7 @@ button {
   background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
-  font-family: "mrs-eaves", serif;
+  font-family: "mrseaves", serif;
   font-weight: 700;
   font-style: normal;
   outline: none;
@@ -156,6 +156,10 @@ button:hover {
   z-index: 10;
   font-size: 150%;
   pointer-events: none !important;
+}
+
+.progress_circle {
+  width: 7.5%;
 }
 
 /* PARALLAX BACKGROUND */
@@ -242,12 +246,12 @@ button:hover {
 }
 
 .landing_p_wrapper {
-  max-width: 24rem;
+  max-width: 24.8rem;
 }
 
 .landing_p_wrapper p {
   color: white;
-  font-family: "Poppins", sans-serif;
+  font-family: var(--font-poppins);
   font-size: 16px;
   line-height: 150%;
   font-weight: 300;
@@ -335,7 +339,7 @@ button:hover {
 
 @media screen and (max-width: 900px) {
   .landing_p_wrapper {
-    max-width: 18rem !important;
+    max-width: 17rem !important;
   }
 
   .landing_p_wrapper p {
@@ -388,11 +392,12 @@ button:hover {
     height: 90vh;
   }
   .landing_p_wrapper {
-    max-width: 21.5rem !important;
+    max-width: 18rem !important;
     /* max-width: unset !important; */
     width: 100% !important;
-    padding: 20px 10px 0 10px;
-    text-align: center;
+    /* padding: 20px 10px 0 10px; */
+    /* text-align: center; */
+    margin-bottom: 10px;
   }
 
   .btn_wrapper {
@@ -452,8 +457,8 @@ button:hover {
   }
 
   .bottom {
-    align-items: center;
-    flex-direction: column;
+    align-items: flex-start;
+    flex-direction: column-reverse;
   }
 }
 

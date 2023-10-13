@@ -23,8 +23,11 @@ export default function Home() {
     // Listen for the window.onload event to ensure everything is loaded
     // window.onload = () => {
     //   console.log("Window fully loaded");
-    setIsLoading(false); // Set isLoading to false when the entire page has loaded
+    // setIsLoading(false); // Set isLoading to false when the entire page has loaded
     // };
+    setTimeout(() => {
+      setIsLoading(false); // Set isLoading to false when the entire page has loaded
+    }, 2000);
 
     // return () => {
     //   window.onload = null; // Cleanup the event listener when the component unmounts

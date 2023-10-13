@@ -23,12 +23,12 @@ const UI = (props: any) => {
   }
 
   const [fadeIn, setFade] = useSpring(() => ({
-    opacity: 1,
+    opacity: 0,
   }));
 
-  // useEffect(() => {
-  //   setFade({ opacity: 1, config: config.molasses });
-  // }, []);
+  useEffect(() => {
+    setFade({ opacity: 1, config: config.molasses });
+  }, []);
 
   const growBtn = useSpring({
     config: { ...config.gentle },

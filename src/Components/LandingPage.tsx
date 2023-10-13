@@ -6,6 +6,7 @@ import { useSpring, config, animated } from "react-spring";
 import ParallaxImage from "./ParallaxImage";
 import ParallaxVideo from "./ParallaxVideo";
 import UI from "./UI";
+import LoadingLottie from "./LoadingLottie";
 
 const LandingPage = (props: any) => {
   const { msgUnity, setSceneState, sceneState, loadingProgression } = props;
@@ -36,9 +37,11 @@ const LandingPage = (props: any) => {
       </div>
       {loadingProgression != 1 && sceneState == "loading" && (
         <div className="fullpage__wrapper loading">
+          <LoadingLottie />
+
           <p style={{ color: "white" }}>loading</p>
-          <br />
-          <p>{Math.round(loadingProgression * 100)}%</p>
+          {/* <br /> */}
+          {/* <p>{Math.round(loadingProgression * 100)}%</p> */}
         </div>
       )}
     </>
