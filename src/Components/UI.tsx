@@ -50,8 +50,9 @@ const UI = (props: any) => {
     },
   });
   return (
-    <>
-      <animated.div className="top" style={fadeIn}>
+    <>        <animated.div className="landing_inner_wrapper"style={fadeIn}>
+
+      <div className="top" >
         <div className="landing_title_wrapper">
           <div className="title_inner">
             <h5>Strings of</h5>
@@ -72,8 +73,8 @@ const UI = (props: any) => {
             />
           </a>
         </div>
-      </animated.div>
-      <animated.div className="bottom" style={fadeIn}>
+      </div>
+      <div className="bottom">
         <div className="btn_wrapper">
           <animated.div
             // className={!hover ? "landing_btn_white" : "landing_btn_hover"}
@@ -103,7 +104,9 @@ const UI = (props: any) => {
             kingdom&apos;s hidden melodies.
           </p>
         </div>
-      </animated.div>
+      </div>
+              </animated.div>
+
     </>
   );
 };

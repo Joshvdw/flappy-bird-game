@@ -34,6 +34,7 @@ a {
 @import url("https://use.typekit.net/fhj0gwj.css");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
 
+
 .fullpage__wrapper {
   /* font-family: "augustus"; */
   width: 100%;
@@ -337,6 +338,7 @@ button:hover {
   pointer-events: none;
 }
 
+
 @media screen and (max-width: 900px) {
   .landing_p_wrapper {
     max-width: 17rem !important;
@@ -462,7 +464,8 @@ button:hover {
   }
 }
 
-@media screen and (min-width: 1800px) {
+
+@media screen and (min-width: 1930px) {
   .landing_p_wrapper {
     max-width: 33rem;
   }

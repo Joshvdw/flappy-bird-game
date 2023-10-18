@@ -29,17 +29,15 @@ const LandingPage = (props: any) => {
       <div className="rect_gradient"></div>
 
       <div className="landing_wrapper">
-        <div className="landing_inner_wrapper">
-          {sceneState == "landing" && (
-            <UI msgUnity={msgUnity} setSceneState={setSceneState} />
-          )}
-        </div>
+        {sceneState == "landing" && (
+          <UI msgUnity={msgUnity} setSceneState={setSceneState} />
+        )}
       </div>
       {loadingProgression != 1 && sceneState == "loading" && (
         <div className="fullpage__wrapper loading">
           <LoadingLottie />
 
-          <p style={{ color: "white" }}>loading</p>
+          {/* <p style={{ color: "white" }}>loading</p> */}
           {/* <br /> */}
           {/* <p>{Math.round(loadingProgression * 100)}%</p> */}
         </div>
