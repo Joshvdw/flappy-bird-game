@@ -314,7 +314,7 @@ button:hover {
 
 .landing_btn_white p,
 .landing_btn_hover p {
-  height: 9px;
+  /* height: 9px; */
 }
 
 /* .red_btn {
@@ -378,7 +378,7 @@ button:hover {
   }
   .landing_btn_white p,
   .landing_btn_hover p {
-    height: 7px;
+    /* height: 7px; */
   }
   .landing_wrapper {
     padding: 20px;
@@ -443,7 +443,7 @@ button:hover {
   }
   .landing_btn_white p,
   .landing_btn_hover p {
-    height: 6px;
+    /* height: 6px; */
   }
 
   .landing_btn_white img,
